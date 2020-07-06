@@ -9,6 +9,8 @@ use Auth;  // 追記
 
 class TodoController extends Controller
 {
+
+
     // 同じクラスの中でのみアクセス可能
     // 他のクラスで使用できないようにする -> 副作用をなくすため
     private $todo;
