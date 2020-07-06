@@ -91,7 +91,7 @@ class TodoController extends Controller
         // SQL文のINSERTに当たる
         $this->todo->fill($input)->save();
         // to('URI')
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
@@ -141,7 +141,7 @@ class TodoController extends Controller
         // dd($this->todo->find($id)->fill($input)); -> Todoモデル
         // dd(redirect()); -> boolean
         $this->todo->find($id)->fill($input)->save();
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
@@ -154,6 +154,6 @@ class TodoController extends Controller
     {
         // DELETE FROM todos WHERE id = $id ;
         $this->todo->find($id)->delete();
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 }
